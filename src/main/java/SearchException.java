@@ -1,4 +1,4 @@
-public class SearchException extends RuntimeException{
+public class SearchException extends RuntimeException {
 
     public SearchException(String s) {
         super(s);

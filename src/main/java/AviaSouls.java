@@ -41,26 +41,13 @@ public class AviaSouls {
      * @param to   Куда прилетаем
      * @return Массив из подходящих билетов
      */
-//    public Ticket[] search(String from, String to) {
-//        Ticket[] result = new Ticket[0]; // массив для ответа
-//        for (Ticket ticket : tickets) { // перебираем все билеты
-//            if (ticket.getFrom().equals(from)) { // совпадает аэропорт вылета
-//                if (ticket.getTo().equals(to)) { // совпадает аэропорт прилёта
-//                    result = addToArray(result, ticket); // добавляем его в массив ответа
-//                }
-//            }
-//        }
-//        Arrays.sort(result);
-//        return result;
-//    }
+
     public Ticket[] search(String from, String to) {
         if (exception(from, to) == null) {
             throw new SearchException(
                     "По заданным параметрам рейсы не найдены"
             );
         }
-
-
         Ticket[] result = new Ticket[0]; // массив для ответа
         for (Ticket ticket : tickets) { // перебираем все билеты
             if (ticket.getFrom().equals(from)) { // совпадает аэропорт вылета
@@ -92,8 +79,8 @@ public class AviaSouls {
         for (Ticket ticket : tickets) {
             if (from.contains(ticket.getFrom())) {
                 if (to.contains(ticket.getTo())) {
-                return ticket;
-            }
+                    return ticket;
+                }
             } else {
                 return null;
             }
